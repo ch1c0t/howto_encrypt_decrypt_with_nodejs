@@ -1,4 +1,4 @@
 { encrypt, decrypt } = require './encryption'
 
-text = 'some'
+text = process.argv[2]
 console.log decrypt encrypt text
