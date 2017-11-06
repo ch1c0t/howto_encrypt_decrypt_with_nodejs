@@ -4,20 +4,10 @@ A simple repository which illustrate how encryption and decryption can be done w
 It is based on
 http://vancelucas.com/blog/stronger-encryption-and-decryption-in-node-js[this article].
 
-== Explanation
+== Usage
 
-First, we will create a symmetric key and put it into an environment variable in
-http://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js[base64].
-
-`coffee generate_key.coffee [filename]` will create an appropriate key and write it to the `filename`.
-For example, `coffee generate_key.coffee symmetric.key` will store it to `symmetric.key` in the current working directory.
-
-Then, we can put it into an environment variable like so:
-
-[source,bash]
-----
-export ENCRYPTION_KEY=$(base64 symmetric.key)
-----
+First, we ned to create a symmetric key. `coffee generate_key.coffee [path]` will create it and  write it to the `path`.
+For example, `coffee generate_key.coffee /tmp/key` will write it into `/tmp/key`.
 
 After this is done, we can use `coffee encrypt_and_decrypt.coffee [some_text]`
 to encrypt and decrypt that text, and print it to stdout.

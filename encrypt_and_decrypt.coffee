@@ -1,4 +1,7 @@
-{ encrypt, decrypt } = require './encryption'
+fs = require 'fs'
+
+Key = require './key'
+key = new Key fs.readFileSync '/tmp/key'
 
 text = process.argv[2]
-console.log decrypt encrypt text
+console.log key.decrypt key.encrypt text
